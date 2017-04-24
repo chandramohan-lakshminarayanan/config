@@ -58,7 +58,7 @@ server:
           NAME: com.chandra.weblogic.base.nq
 ---
   spring:
-    profiles: oracle
+    profiles: oracle, default
     datasource:
       hikari:
         jdbc-url: jdbc:oracle:thin:@localhost:1521/xe
@@ -76,7 +76,7 @@ server:
       hibernate.ddl-auto: update
 ---
   spring:
-    profiles: mysql
+    profiles: mysql, default
   datasource:
       hikari:
         jdbc-url: jdbc:mysql://localhost:3306/afpo_soa?useSSL=false
