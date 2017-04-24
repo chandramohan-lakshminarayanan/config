@@ -58,7 +58,7 @@ server:
           NAME: com.chandra.weblogic.base.nq
 ---
   spring:
-    profiles: oracle
+    profiles: oracle, default
     datasource:
       hikari:
         jdbc-url: jdbc:oracle:thin:@localhost:1521/xe
@@ -67,6 +67,8 @@ server:
         driver-class-name: oracle.jdbc.driver.OracleDriver
         connection-test-query: SELECT 1 from dual
         pool-name: afpoLoggingCP
+        connection-timeout: 60000
+        maximum-pool-size: 100
     jpa: 
       properties: 
         hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
@@ -74,7 +76,7 @@ server:
       hibernate.ddl-auto: update
 ---
   spring:
-    profiles: mysql
+    profiles: mysql, default
   datasource:
       hikari:
         jdbc-url: jdbc:mysql://localhost:3306/afpo_soa?useSSL=false
@@ -83,6 +85,8 @@ server:
         driver-class-name: com.mysql.jdbc.Driver
         connection-test-query: SELECT 1
         pool-name: afpoLoggingCP
+        connection-timeout: 60000
+        maximum-pool-size: 100
       jpa: 
         properties: 
           hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
