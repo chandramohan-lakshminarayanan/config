@@ -67,8 +67,6 @@ server:
         driver-class-name: oracle.jdbc.driver.OracleDriver
         connection-test-query: SELECT 1 from dual
         pool-name: afpoLoggingCP
-        connection-timeout: 60000
-        maximum-pool-size: 100
     jpa: 
       properties: 
         hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
@@ -85,8 +83,6 @@ server:
         driver-class-name: com.mysql.jdbc.Driver
         connection-test-query: SELECT 1
         pool-name: afpoLoggingCP
-        connection-timeout: 60000
-        maximum-pool-size: 100
       jpa: 
         properties: 
           hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
