@@ -55,32 +55,7 @@ schema:
     location: xsd/EventDetails.xsd
 server:
     port: 9081
----
 spring:
-    profiles: local, default
-    datasource:
-        hikari:
-            connection-test-query: SELECT 1
-            connection-timeout: 60000
-            driver-class-name: org.h2.Driver
-            jdbc-url: jdbc:h2:~/test
-            maximum-pool-size: 100
-            password: 
-            pool-name: afpoLoggingCP
-            username: SA
-    jpa:
-        hibernate:
-            ddl-auto: update
-        properties:
-            hibernate:
-                dialect: org.hibernate.dialect.H2Dialect
-        show-sql: true
-    mail:
-        host: soa-host1
-        port: 25        
----
-spring:
-    profiles: prod
     datasource:
         hikari:
             connection-test-query: SELECT 1
@@ -97,7 +72,7 @@ spring:
         properties:
             hibernate:
                 dialect: org.hibernate.dialect.MySQL5Dialect
-        show-sql: true        
+        show-sql: true
     mail:
         host: soa-host1
         port: 25
